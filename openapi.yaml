@@ -92,7 +92,7 @@ paths:
                     decision: MATCH
                     confidence: 0.97
                     subjectId: STUDENT-2026-001
-                    reason: null
+                    reason: Matched above confidence threshold
                     modelVersion: v2.1.0
                     processedAt: "2026-05-10T08:00:00Z"
                 lowConfidence:
@@ -101,7 +101,6 @@ paths:
                     traceId: 0196fb3d-4ad7-7d1e-9f49-5d5148d2babe
                     decision: LOW_CONFIDENCE
                     confidence: 0.45
-                    subjectId: null
                     reason: Chất lượng ảnh thấp, không đủ độ sáng
                     modelVersion: v2.1.0
                     processedAt: "2026-05-10T08:01:00Z"
@@ -184,10 +183,10 @@ paths:
                         decision: MATCH
                         confidence: 0.97
                         subjectId: STUDENT-2026-001
-                        reason: null
+                        reason: Matched above confidence threshold
                         modelVersion: v2.1.0
                         processedAt: "2026-05-10T08:00:00Z"
-                    nextCursor: null
+                    nextCursor: cursor-next-page
                     hasMore: false
         "401":
           $ref: "#/components/responses/Unauthorized"
@@ -365,7 +364,7 @@ components:
           type: [string, "null"]
           maxLength: 300
           description: Lý do khi decision là LOW_CONFIDENCE hoặc NO_MATCH.
-          example: null
+          example: Chất lượng ảnh thấp, không đủ độ sáng
         modelVersion:
           type: string
           minLength: 3
@@ -478,7 +477,7 @@ components:
         nextCursor:
           type: [string, "null"]
           description: Cursor trang tiếp theo, null nếu hết dữ liệu.
-          example: null
+          example: cursor-next-page
         hasMore:
           type: boolean
           description: Còn dữ liệu ở trang sau hay không.
