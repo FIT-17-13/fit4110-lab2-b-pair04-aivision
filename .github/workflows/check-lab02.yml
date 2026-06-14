@@ -3,6 +3,7 @@ name: Check Lab 02 OpenAPI repo
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   structure-check:
